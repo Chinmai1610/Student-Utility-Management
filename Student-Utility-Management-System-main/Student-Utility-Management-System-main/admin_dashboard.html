@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<div class="container">
+  <h2>Admin Dashboard</h2>
+
+  <a href="/register">➕ Register New Student</a> <br>
+  <a href="/notes">📝 Manage Notes</a> <br>
+  <a href="/tasks">📌 Manage Tasks</a> <br>
+  <a href="/class_schedule">📚 Manage Class Schedule</a> <br>
+  <a href="/trash">🗑️ View Trash</a> <br>
+  <a href="/logout">🚪 Logout</a>
+
+  <h3>Registered Students</h3>
+  <table border="1" cellpadding="5">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Semester</th>
+      <th>Branch</th>
+      <th>Actions</th>
+    </tr>
+    {% for student in students %}
+    <tr>
+      <td>{{ student[0] }}</td>
+      <td>{{ student[1] }}</td>
+      <td>{{ student[2] }}</td>
+      <td>{{ student[3] }}</td>
+      <td>
+        <a href="/edit_student/{{ student[0] }}">✏️ Edit</a>
+        <a href="/delete_student/{{ student[0] }}">🗑️ Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>

@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/static/style.css">
+<div class="container">
+  <h2>Welcome {{ session['student'] }}</h2>
+
+  <h3>Notes</h3>
+  <ul>
+    {% for note in notes %}
+      <li>{{ note[1] }}</li>
+    {% endfor %}
+  </ul>
+
+  <h3>Tasks</h3>
+  <ul>
+    {% for task in tasks %}
+      <li>{{ task[1] }}</li>
+    {% endfor %}
+  </ul>
+
+  <h3>Class Schedule</h3>
+  <ul>
+    {% for cls in classes %}
+      <li>{{ cls[1] }}</li>
+    {% endfor %}
+  </ul>
+
+  <a href="/logout">Logout</a>
+</div

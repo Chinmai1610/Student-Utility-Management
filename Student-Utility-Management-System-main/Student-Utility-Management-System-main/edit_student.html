@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="/static/style.css">
+<div class="container">
+  <h2>Edit Student</h2>
+  <form method="post">
+    Name: <input name="name" value="{{ student[1] }}" required><br>
+    Semester: <input name="semester" value="{{ student[2] }}" required><br>
+    Branch: <input name="branch" value="{{ student[3] }}" required><br>
+    Password: <input type="password" name="password" value="{{ student[4] }}" required><br>
+    <button type="submit">Update</button>
+  </form>
+  <a href="/admin">Back</a>
+</div>

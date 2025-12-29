@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<div class="container">
+  <h2>Trash Bin</h2>
+
+  <table border="1" cellpadding="5">
+    <tr>
+      <th>ID</th>
+      <th>Type</th>
+      <th>Content</th>
+      <th>Actions</th>
+    </tr>
+    {% for item in trash %}
+    <tr>
+      <td>{{ item[0] }}</td>
+      <td>{{ item[1] }}</td>
+      <td>{{ item[2] }}</td>
+      <td>
+        <a href="/restore/{{ item[0] }}">🔄 Restore</a>
+        <a href="/permanent_delete/{{ item[0] }}">❌ Delete Permanently</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <a href="/admin">← Back to Dashboard</a>
+</div>

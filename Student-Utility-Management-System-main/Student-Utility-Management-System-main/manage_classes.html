@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<div class="container">
+  <h2>Manage Class Schedule</h2>
+
+  <form method="post">
+    <input type="text" name="schedule" placeholder="Enter class schedule" required>
+    <button type="submit">Add Class</button>
+  </form>
+
+  <h3>All Class Schedules</h3>
+  <ul>
+    {% for cls in classes %}
+      <li>
+        {{ cls[1] }}
+        <a href="/delete_class/{{ cls[0] }}" style="float:right;">Delete</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <a href="/admin">← Back to Dashboard</a>
+</div>
